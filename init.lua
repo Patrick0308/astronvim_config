@@ -52,6 +52,12 @@ return {
     servers = {
       -- "pyright"
     },
+
+    config = {
+      gopls = {
+        experimentalWorkspaceModule = true
+      }
+    }
   },
 
   -- Configure require("lazy").setup() options
