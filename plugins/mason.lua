@@ -29,8 +29,22 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        -- "python",
+        "delve",
       })
+      opts.handlers = {
+        function(config)
+      require("dap").adapters.go = {
+	      type = 'server',
+	      port = '${port}',
+	      executable = {
+		      command = vim.fn.exepath('dlv'),
+		      args = { 'dap', '-l', '127.0.0.1:${port}' },
+	      }
+      }
+          require('mason-nvim-dap').default_setup(config)
+        end, 
+
+      }
     end,
   },
 }

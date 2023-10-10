@@ -9,4 +9,21 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+   {
+     "Luxed/ayu-vim",
+     config = function()
+         vim.g.ayucolor="dark"
+     end,
+   },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        path_display = {"smart"},
+        file_ignoke_patterns = {
+          "%_test.go",
+        }
+      }
+    }
+  }
 }
