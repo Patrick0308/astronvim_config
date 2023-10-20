@@ -21,4 +21,5 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.file-explorer.oil-nvim" },
 }
